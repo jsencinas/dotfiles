@@ -100,7 +100,7 @@ sudo pacman -S firefox
 **Create profiles**
 1. Copy the ~/dev/non-stow-files/firefox_users directory to ~/.local/share/applications
     ```
-    cp -r ~/dev/non-stow-files/firefox ~/.local/share/applications
+    cp -r ~/dev/non-stow-files/application_configs/firefox ~/.local/share/applications
     ```
 2. Run the following command:
     ```
