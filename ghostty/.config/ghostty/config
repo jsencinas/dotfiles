@@ -21,6 +21,7 @@
 # # separated by equals signs.
 
 font-family = Iosevka
+font-size = 14
 
 # window-padding-x = 2
 #
@@ -43,3 +44,6 @@ font-family = Iosevka
 # # which is explained in the docs for that config option.
 # # Just for example:
 # resize-overlay-duration = 4s 200ms
+
+window-height = 120
+window-width = 220
