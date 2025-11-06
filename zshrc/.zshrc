@@ -49,6 +49,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Remap <Ctrl-l> to accept the current autosuggestion
 bindkey '^ ' autosuggest-accept
+bindkey '^H' backward-kill-word
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
