@@ -98,9 +98,9 @@ You can test your connection with the following command:
 sudo pacman -S firefox
 ```
 **Create profiles**
-1. Copy the ~/dev/non-stow-files/firefox_users directory to ~/.local/share/applications
+1. Copy the ~/dotfiles/non-stow-files/firefox_users directory to ~/.local/share/applications
     ```
-    cp -r ~/dev/non-stow-files/application_configs/firefox ~/.local/share/applications
+    cp -r ~/dotfiles/non-stow-files/application_configs/firefox ~/.local/share/applications
     ```
 2. Run the following command:
     ```
@@ -179,7 +179,7 @@ instead of "master" with the following command:
     ```
 2. Stow the config files with this command:
     ```
-    stow ~/dev/nvim
+    stow ~/dotfiles/nvim
     ```
 **Dependencies**
 1. wl-clipboard: To copy things to the system clipboard
@@ -284,7 +284,7 @@ Github lik: https://github.com/Keyitdev/sddm-astronaut-theme
     ```
 2. To intall my custom gigachad theme (with little to no change), copy the following .conf file
     ```
-    ~/dev/non-stow-files/sddm_gigachad_theme/Themes/black_hole_gigachad.conf
+    ~/dotfiles/non-stow-files/sddm_gigachad_theme/Themes/black_hole_gigachad.conf
     ```
     to folowing directory:
     ```
@@ -292,12 +292,12 @@ Github lik: https://github.com/Keyitdev/sddm-astronaut-theme
     ```
     You can do so automatically by runnig the following command:
     ```
-    sudo cp ~/dev/non-stow-files/sddm_gigachad_theme/Themes/black_hole_gigachad.conf /usr/share/sddm/themes/sddm-astronaut-theme/Themes/
+    sudo cp ~/dotfiles/non-stow-files/sddm_gigachad_theme/Themes/black_hole_gigachad.conf /usr/share/sddm/themes/sddm-astronaut-theme/Themes/
     ```
 
 3. To apply the config replace the following .desktop file
     ```
-    ~/dev/non-stow-files/sddm_gigachad_theme/metadata.desktop
+    ~/dotfiles/non-stow-files/sddm_gigachad_theme/metadata.desktop
     ```
     in the following directory:
     ```
@@ -305,11 +305,11 @@ Github lik: https://github.com/Keyitdev/sddm-astronaut-theme
     ```
     You can do so automatically by running the following command:
     ```
-    sudo cp ~/dev/non-stow-files/sddm_gigachad_theme/metadata.desktop /usr/share/sddm/themes/sddm-astronaut-theme/metadata.desktop
+    sudo cp ~/dotfiles/non-stow-files/sddm_gigachad_theme/metadata.desktop /usr/share/sddm/themes/sddm-astronaut-theme/metadata.desktop
     ```
 4. Finally, to add the balck hole theme, run the following command:
     ```
-    sudo cp ~/dev/backgrounds/black_hole_gigachad.png /usr/share/sddm/themes/sddm-astronaut-theme/Backgrounds
+    sudo cp ~/dotfiles/backgrounds/black_hole_gigachad.png /usr/share/sddm/themes/sddm-astronaut-theme/Backgrounds
     ```
 This will actually copy the black hole image to the /usr/share/sddm/themes/sddm-astronaut-theme/Backgrounds folder
 
