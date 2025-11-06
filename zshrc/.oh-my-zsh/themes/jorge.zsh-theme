@@ -5,10 +5,11 @@ local blue_gray="%F{66}"       # #4D7C8A
 local teal="%F{109}"           # #7F9C96
 local green_soft="%F{108}"     # #8FAD88
 local lime_light="%F{144}"     # #CBDF90
+local muted_red="%F{167}"      # #D75F5F
 local reset="%f%k"
 
 # --- Prompt sections ---
-local return_code="%(?..${blue_dark}%? ↵${reset})"
+local return_code="%(?..${muted_red}%? ↵${reset})"
 local user_host="%B%(!.%F{red}.${lime_light})%n@%m${reset} "
 local user_symbol='%(!.#.$)'
 local current_dir="%B${teal}%~ ${reset}"
