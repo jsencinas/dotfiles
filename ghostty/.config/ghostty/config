@@ -4,8 +4,7 @@
 font-family = Iosevka
 font-size = 14
 
-keybind = ctrl+backspace: send ctrl+w
-confirm-close = false
+confirm-close-surface = false
 
 window-height = 120
 window-width = 220
