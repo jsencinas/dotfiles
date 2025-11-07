@@ -10,3 +10,5 @@ confirm-close-surface = false
 
 # Starts ghostty at full screen mode
 maximize
+
+background-opacity = 0.85
