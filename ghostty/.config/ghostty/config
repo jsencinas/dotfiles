@@ -1,10 +1,12 @@
 # This is the configuration file for Ghostty.
 #   /home/jorge/.config/ghostty/config
 
+# Font configs
 font-family = Iosevka
 font-size = 14
 
+# Avoids closing window warning
 confirm-close-surface = false
 
-window-height = 120
-window-width = 220
+# Starts ghostty at full screen mode
+maximize
