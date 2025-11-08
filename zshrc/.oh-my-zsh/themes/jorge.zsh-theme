@@ -1,11 +1,11 @@
 # Inspired in bria theme from oh my zsh
 # --- Custom palette ---
-local blue_dark="%F{25}"       # #1B4079
-local blue_gray="%F{66}"       # #4D7C8A
-local teal="%F{109}"           # #7F9C96
-local green_soft="%F{108}"     # #8FAD88
-local lime_light="%F{144}"     # #CBDF90
-local muted_red="%F{167}"      # #D75F5F
+local blue_dark="%F{25}"       # 1B4079
+local blue_gray="%F{66}"       # 4D7C8A
+local blue_keyword="%F{111}"   # 61AFEF
+local teal="%F{109}"           # 7F9C96
+local lime_light="%F{108}"     # CBDF90
+local muted_red="%F{167}"      # D75F5F
 local reset="%f%k"
 
 # --- Prompt sections ---
@@ -19,6 +19,8 @@ local vcs_branch='$(git_prompt_info)$(hg_prompt_info)'
 local rvm_ruby='$(ruby_prompt_info)'
 local venv_prompt='$(virtualenv_prompt_info)'
 local kube_prompt=''
+
+export LS_COLORS="${LS_COLORS}:ex=01;38;5;180"
 
 if [[ "${plugins[@]}" =~ 'kube-ps1' ]]; then
     kube_prompt='$(kube_ps1)'
