@@ -1,16 +1,17 @@
 # Inspired in bria theme from oh my zsh
 # --- Custom palette ---
-local blue_dark="%F{25}"       # 1B4079
-local blue_gray="%F{66}"       # 4D7C8A
-local blue_keyword="%F{111}"   # 61AFEF
-local teal="%F{109}"           # 7F9C96
-local lime_light="%F{108}"     # CBDF90
-local muted_red="%F{167}"      # D75F5F
+local blue_dark="%F{25}"
+local blue_gray="%F{66}"
+local blue_keyword="%F{111}"
+local teal="%F{109}"
+local lime_light="%F{144}"
+local nature_green="%F{108}" 
+local muted_red="%F{167}"
 local reset="%f%k"
 
 # --- Prompt sections ---
 local return_code="%(?..${muted_red}%? ↵${reset})"
-local user_host="%B%(!.%F{red}.${lime_light})%n@%m${reset} "
+local user_host="%B%(!.%F{red}.${nature_green})%n@%m${reset} "
 local user_symbol='%(!.#.$)'
 local current_dir="%B${teal}%~ ${reset}"
 local conda_prompt='$(conda_prompt_info)'
