@@ -1,8 +1,7 @@
 To back up gnome configs run the followign:
 ```
 dconf dump /org/gnome/ > ~/dotfiles/gnome/.config/gnome/settings.conf
-# gnome-extensions list > ~/dotfiles/gnome/.config/gnome/extensions.list
-
+gnome-extensions list > ~/dotfiles/gnome/.config/gnome/extensions.list
 ```
 
 Stow does't apply the gnome configs to your system, you need to run
