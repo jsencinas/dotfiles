@@ -60,3 +60,6 @@ bindkey '^H' backward-kill-word
 
 # Compilation flags
 # export ARCHFLAGS="-arch $(uname -m)"
+
+# For Ubuntu, uncomment the following line:
+# export PATH=$HOME/.local/opt/nvim/bin:$PATH
