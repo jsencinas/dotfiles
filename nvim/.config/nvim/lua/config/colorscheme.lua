@@ -1,6 +1,7 @@
--- vim.cmd.colorscheme("catppuccin-mocha")
-vim.cmd.colorscheme("kanagawa-wave")
+vim.cmd.colorscheme("catppuccin-mocha")
+-- vim.cmd.colorscheme("kanagawa-wave")
 
+--[[
 vim.cmd [[
   hi Normal guibg=NONE ctermbg=NONE
   hi NormalFloat guibg=NONE ctermbg=NONE
@@ -8,3 +9,4 @@ vim.cmd [[
   hi LineNr guibg=NONE ctermbg=NONE
   hi EndOfBuffer guibg=NONE ctermbg=NONE
 ]]
+--]]
