@@ -6,3 +6,7 @@
 
 [init]
     defaultbranch = main
+[core]
+	editor = nvim
+[rerere]
+	enabled = true
