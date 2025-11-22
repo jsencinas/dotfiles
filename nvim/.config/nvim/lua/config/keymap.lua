@@ -8,7 +8,7 @@ local opts = { noremap = true, silent = true }
 vim.g.mapleader = " "
 
 -- Vim builtin commands
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, { desc = 'Open the file explorer within vim' })
+vim.keymap.set("n", "<leader>lv", vim.cmd.Ex, { desc = 'Open the file explorer within vim' })
 
 vim.keymap.set("v", "J", ":m '>+1<cr>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<cr>gv=gv")
@@ -22,6 +22,7 @@ vim.keymap.set("n", "<leader>y", "\"+y")
 
 -- vim.keymap.set("n", "Q", "<nop>")
 vim.keymap.set("i", "<C-c>", "<Esc>")
+vim.keymap.set("n", "<C-c>", "<cmd>nohlsearch<CR>")
 
 -- TMUX NAVIGATION (In ~/.config/nvim/lua/plugins/tmux_navigation.lua file)
 
