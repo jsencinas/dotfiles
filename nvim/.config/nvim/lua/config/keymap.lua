@@ -27,9 +27,12 @@ vim.keymap.set("n", "<C-c>", "<cmd>nohlsearch<CR>")
 -- TMUX NAVIGATION (In ~/.config/nvim/lua/plugins/tmux_navigation.lua file)
 
 -- TELESCOPE
-vim.keymap.set("n", "<leader>pf", builtin.find_files, { desc = 'Telescope find files' })
-vim.keymap.set("n", "<leader>ps", builtin.live_grep, { desc = 'Telescope grep a string respecting .gitignore' })
---[[ vim.keymap.set("n", "<leader>ps", function()
+vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = 'Telescope find files' })
+vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = 'Telescope live grep' })
+-- To use live grep, install 'ripgrep' in your computer
+
+--[[
+vim.keymap.set("n", "<leader>ps", function()
     builtin.grep_string({ search = vim.fn.input("Grep > ") })
 end
 )
