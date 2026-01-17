@@ -111,14 +111,15 @@ return {
 
       -- Enable the following language servers
       local servers = {
-        clangd = {},
-        jdtls = {},
-	-- gopls = {},
-	pyright = {},
-	bashls = {},
-	-- sqls = {},
-        rust_analyzer = {},
-        lua_ls = {
+        clangd = {}, --C / C++
+        jdtls = {}, --Java
+	pyright = {}, -- Python
+	bashls = {}, -- Bash
+        rust_analyzer = {}, -- Rust
+        html = {}, -- Html
+	cssls = {}, -- Css
+	ts_ls = {}, -- JavaScript / Typescript
+	lua_ls = { -- Lua
           settings = {
             Lua = {
               completion = {
