@@ -47,7 +47,7 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-# Remap <Ctrl-l> to accept the current autosuggestion
+# Remap <Ctrl- > to accept the current autosuggestion
 bindkey '^ ' autosuggest-accept
 bindkey '^H' backward-kill-word
 
