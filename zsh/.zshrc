@@ -51,7 +51,7 @@ source $ZSH/oh-my-zsh.sh
 bindkey '^ ' autosuggest-accept
 
 # <Ctrl-BackSpace> to delete a complete word
-# bindkey '^H' backward-kill-word
+bindkey '^H' backward-kill-word
 
 setopt glob_dots
 # Preferred editor for local and remote sessions
