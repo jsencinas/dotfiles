@@ -47,9 +47,11 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-# Remap <Ctrl- > to accept the current autosuggestion
+# Remap <Ctrl-Space> to accept the current autosuggestion
 bindkey '^ ' autosuggest-accept
-bindkey '^H' backward-kill-word
+
+# <Ctrl-BackSpace> to delete a complete word
+# bindkey '^H' backward-kill-word
 
 setopt glob_dots
 # Preferred editor for local and remote sessions
