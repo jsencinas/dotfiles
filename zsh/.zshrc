@@ -64,5 +64,23 @@ setopt glob_dots
 # Compilation flags
 # export ARCHFLAGS="-arch $(uname -m)"
 
+if [[ "$TERM" == "xterm-ghostty" ]]; then
+  export TERM=xterm-256color
+fi
+
+# For flutter
+export PATH="$HOME/develop/flutter/bin:$PATH"
+
+# For android
+# export PATH="$HOME/develop/android_sdk/cmdline-tools/latest/bin/:$PATH"
+export ANDROID_HOME="$HOME/develop/android_sdk"
+export ANDROID_SDK_ROOT="$ANDROID_HOME"
+export ANDROID_AVD_HOME="$ANDROID_HOME/avd"
+export PATH="$ANDROID_HOME/emulator:$ANDROID_HOME/platform-tools:$ANDROID_HOME/cmdline-tools/latest/bin:$PATH"
+
+if [ -z "$TMUX" ]; then
+  tmux new-session -A -s temp \; set-option -t temp destroy-unattached on
+fi
+
 # For Ubuntu, uncomment the following line:
 # export PATH=$HOME/.local/opt/nvim/bin:$PATH
