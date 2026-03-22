@@ -78,7 +78,7 @@ export ANDROID_SDK_ROOT="$ANDROID_HOME"
 export PATH="$ANDROID_HOME/emulator:$ANDROID_HOME/platform-tools:$ANDROID_HOME/cmdline-tools/latest/bin:$PATH"
 
 if [ -z "$TMUX" ]; then
-  tmux new-session -A -s temp \; set-option -t temp destroy-unattached on
+  tmux new -A -s temp
 fi
 
 alias "code"="codium ."
