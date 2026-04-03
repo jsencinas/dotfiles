@@ -11,19 +11,14 @@ IMAGE
     - [stow](#stow)
     - [git](#git)
     - [nvim](#nvim)
+    - [vs-codium](#vs-codium)
 - [Terminal](#Terminal)
     - [ghostty](#ghostty)
     - [zsh](#zsh)
     - [Oh My Zsh](#Oh-My-Zsh)
     - [Tmux](#Tmux)PENDING
 - [Desktop utilities](#Desktop-utilities)
-    - [Hypr](#Hypr)
-    - [Waybar](#Waybar)*
-    - [Sddm](#Sddm)
-    - [Theming](#Theming)PENDING
-    - [Network applet](#Network-applet)PENDING
-    - [Bluetooth applet](#Bluetooth-applet)PENDING
-    - [Brightness control](#Brightness-control)PENDING
+    - [Gnome](#Gnome)
 - [Yay](#Yay)
 - [Fonts](#Fonts)PENDING
 
@@ -140,7 +135,7 @@ sudo pacman -S stow
 ```
 sudo pacman -S git
 ```
-**Configure**<br>
+**Config**<br>
 Git needs some information like an identifies so that git can register **who**
 made certain change.
 1. Set username
@@ -173,7 +168,7 @@ instead of "master" with the following command:
 
 ## nvim
 **Installation**
-1. Run the following command to isntall the software:
+1. Run the following command:
     ```
     sudo pacman -S nvim
     ```
@@ -198,6 +193,21 @@ instead of "master" with the following command:
     ```
     sudo pacman -S npm
     ```
+
+## vs-codium
+**Installation**
+1. Run the following command:
+```
+yay -S vscodium-bin
+```
+
+**Config**
+In here, as configs, I am refering more about plugins/extensios
+1. Tokyo night (Theme)
+2. VSCode Neovim
+3. Prettier - Code formatter
+4. Error Lens
+
 
 # Terminal
 ## ghostty
@@ -231,103 +241,14 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 PENDING
 
 # Desktop utilities
-## hypr -> hyprland
-Hyprland is a dynamic tiling Wayland compositor for Linux.<br>
+## Gnome
+Gnome is a Desktop enviorment for Linux
 **Installation**
-```
-sudo pacman -S hyprland
-```
-**Dependencies**<br>
-(temporal) kitty needs to be installed as its the default terminal in hyprland.
-```
-sudo pacman -S kitty
-```
-
-**Remove built-in wallpapers**
-```
-sudo rm -rf /usr/share/hypr/wall*
-```
-
-## hypr -> hyprlock
-Hyprlock, from the hypr ecosystem, is a lockscreen utility for hyprland.<br>
-**Installation**
-```
-sudo pacman -S hyprlock
-```
-
-## hypr -> hypridle
-Hypridle, from the hypr ecosystem, is Hyprland’s idle management daemon.<br>
-**Installation**
-```
-sudo pacman -S hyprpaper
-```
-
-## hypr -> hyprpaper
-Hyprpaper, from the hypr ecosystem, is a wallpaper utility for Hyprland.<br>
-**Installation**
-```
-sudo pacman -S hyprpaper
-```
-
-## waybar
-Waybar is a highly customizable Wayland bar for Sway and Wlroots based compositors.<br>
-**Installation**
-```
-sudo pacman -S waybar
-```
-
-## Sddm
-Github lik: https://github.com/Keyitdev/sddm-astronaut-theme
-1. Run the following command:
     ```
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/keyitdev/sddm-astronaut-theme/master/setup.sh)"
+    sudo pacman -S gnome
     ```
-2. To intall my custom gigachad theme (with little to no change), copy the following .conf file
-    ```
-    ~/dotfiles/non-stow-files/sddm_gigachad_theme/Themes/black_hole_gigachad.conf
-    ```
-    to folowing directory:
-    ```
-    /usr/share/sddm/themes/sddm-astronaut-theme/Themes
-    ```
-    You can do so automatically by runnig the following command:
-    ```
-    sudo cp ~/dotfiles/non-stow-files/sddm_gigachad_theme/Themes/black_hole_gigachad.conf /usr/share/sddm/themes/sddm-astronaut-theme/Themes/
-    ```
-
-3. To apply the config replace the following .desktop file
-    ```
-    ~/dotfiles/non-stow-files/sddm_gigachad_theme/metadata.desktop
-    ```
-    in the following directory:
-    ```
-    /usr/share/sddm/themes/sddm-astronaut-theme
-    ```
-    You can do so automatically by running the following command:
-    ```
-    sudo cp ~/dotfiles/non-stow-files/sddm_gigachad_theme/metadata.desktop /usr/share/sddm/themes/sddm-astronaut-theme/metadata.desktop
-    ```
-4. Finally, to add the balck hole theme, run the following command:
-    ```
-    sudo cp ~/dotfiles/backgrounds/black_hole_gigachad.png /usr/share/sddm/themes/sddm-astronaut-theme/Backgrounds
-    ```
-This will actually copy the black hole image to the /usr/share/sddm/themes/sddm-astronaut-theme/Backgrounds folder
-
-## Theming
-*nwg-look
-    ```
-    sudo pacman -S nwg-look
-    ```
-
-## Network applet
-*nm-applet
-*network-manager-demu
-    ```
-    sudo pacman -S nm-applet
-    ```
-
-## Bluetooth applet
-*bluez bluez-utils blue-man
+**Config**
+[Pending]
 
 # Yay
 Yay is an AUR helper and Pacman wrapper for Arch Linux.<br>
@@ -340,8 +261,22 @@ makepkg -si
 ```
 
 # Fonts
+## Apple fonts
+**Installation**
+```
+yay -S apple-fonts
+```
+
+**Config**
+Inside the fonts options in the Gnome Tweaks application, select the 
+Interface Text and Document Text to SF Compact Display (Thats my 
+personal preference).
+
+
+## Times New Roman
 **Installation**<br>
 (This enables the Times New Roman option in google docs)
 ```
 sudo pacman -S ttf-liberation ttf-dejavu
 ```
+
