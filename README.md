@@ -202,7 +202,7 @@ yay -S vscodium-bin
 ```
 
 **Config**
-In here, as configs, I am refering more about plugins/extensios
+In here, as configs, I am refering more about plugins/extensions
 1. Tokyo night (Theme)
 2. VSCode Neovim
 3. Prettier - Code formatter
@@ -238,7 +238,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 ```
 
 ## Tmux
-PENDING
+[PENDING]
 
 ## Yay
 Yay is an AUR helper and Pacman wrapper for Arch Linux.<br>
@@ -257,8 +257,44 @@ Gnome is a Desktop enviorment for Linux
     ```
     sudo pacman -S gnome
     ```
-**Config**
-[Pending]
+**Config**<br>
+a. Extensions setup
+    1. Install the browser connector
+        ```sudo pacman -S gnome-browser-connector```
+    2. Install the following browser extension
+        ```https://addons.mozilla.org/en-US/firefox/addon/gnome-shell-integration/```
+    3. Go to the gnome extensions website
+        ```https://extensions.gnome.org/```
+    4. Install your desired extension with one click (You will see your 
+    installed extensions in the gnome extensions app).
+
+    5. I personally have the following extensions:
+        - Blur my shell
+        - Clipboard indicator
+        - Dash to dock
+
+b. Keyboard shortcuts configs
+    1. Move window one workspace to the left -->    Shift+Alt+Left
+    2. Move window one workspace to the right ->    Shift+Alt+Right
+    3. Move window to last workspace ---------->    Shift+Alt+End <br>
+    4. Move window to workspace 1 ------------->    Shift+Alt+1 
+    5. Move window to workspace 2 ------------->    Shift+Alt+2
+    6. Move window to workspace 3 ------------->    Shift+Alt+3 
+    7. Move window to workspace 4 ------------->    Shift+Alt+4 <br>
+    8. Close window --------------------------->    Alt+c
+    9. Launch terminal ------------------------>    Alt+Q<br>
+    10. Switch applications ------------------->    Disabled <br>
+    11. Switch to workspace 1 ----------------->    Alt+1
+    12. Switch to workspace 2 ----------------->    Alt+2
+    13. Switch to workspace 3 ----------------->    Alt+3
+    14. Switch to workspace 4 ----------------->    Alt+4 <br>
+    15. Switch to workspace on the left ------->    Disabled
+    16. Switch to workspace on the right ------>    Disabled
+    17. Switch windows ------------------------>    Alt+Tab <br>
+    18. Switch to next input source ----------->    Alt+Space
+    19. Activate the window menu -------------->    Disabled <br>
+    20. Show the notification list ------------>    Disabled
+    21. Toggle clipboard menu ----------------->    Super+v
 
 # Fonts
 ## Apple fonts
@@ -266,7 +302,6 @@ Gnome is a Desktop enviorment for Linux
 ```
 yay -S apple-fonts
 ```
-
 **Config**
 Inside the fonts options in the Gnome Tweaks application, select the 
 Interface Text and Document Text to SF Compact Display (Thats my 
