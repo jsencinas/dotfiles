@@ -19,7 +19,7 @@ IMAGE
     - [Yay](#Yay)
 - [Desktop utilities](#Desktop-utilities)
     - [Gnome](#Gnome)
-- [Fonts](#Fonts)PENDING
+- [Fonts](#Fonts)
 
 # Overview
 A compilation of all my gigachad config files for the software I use in my linux enviorment.
