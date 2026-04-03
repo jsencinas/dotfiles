@@ -17,9 +17,9 @@ IMAGE
     - [zsh](#zsh)
     - [Oh My Zsh](#Oh-My-Zsh)
     - [Tmux](#Tmux)PENDING
+    - [Yay](#Yay)
 - [Desktop utilities](#Desktop-utilities)
     - [Gnome](#Gnome)
-- [Yay](#Yay)
 - [Fonts](#Fonts)PENDING
 
 # Overview
@@ -240,6 +240,16 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 ## Tmux
 PENDING
 
+## Yay
+Yay is an AUR helper and Pacman wrapper for Arch Linux.<br>
+**Installation**
+```
+cd
+git clone <yay_repo>
+cd yay
+makepkg -si
+```
+
 # Desktop utilities
 ## Gnome
 Gnome is a Desktop enviorment for Linux
@@ -249,16 +259,6 @@ Gnome is a Desktop enviorment for Linux
     ```
 **Config**
 [Pending]
-
-# Yay
-Yay is an AUR helper and Pacman wrapper for Arch Linux.<br>
-**Installation**
-```
-cd
-git clone <yay_repo>
-cd yay
-makepkg -si
-```
 
 # Fonts
 ## Apple fonts
