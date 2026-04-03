@@ -3,7 +3,6 @@ IMAGE
 
 # Table of contents
 - [Overview](#Overview)
-- [Quick setup](#Quick-setup)
 - [Network config](#Network-config)
 - [General software](#General-software) 
     - [Firefox](#firefox)
@@ -24,16 +23,6 @@ IMAGE
 
 # Overview
 A compilation of all my gigachad config files for the software I use in my linux enviorment.
-In addition, a series of .sh files are located in the repo. When runned, this .sh files install
-all the dependencies necessary to work perfectly. For more info, take a look at the 
-[quick setup](#Quick-setup) section.
-Either way, clone this repository to your home directory. This repo will be needed to get the
-configuration files, so if you don't want the dot files, theres no need to clone it.
-
-# Quick setup
-There are multiple sh files to automate some installation processes.
-- To get a full desktop installation run the following file: 
-- Modular sh files are located in the sh_files directory
 
 # Network config
 To initially connect to the wireless network, I recomend using the 
@@ -109,19 +98,8 @@ sudo pacman -S firefox
 **Installation:**
 Run the following command:
 ```
-curl -fsS https://dl.brave.com/install.sh | sh
+yay -Sy brave-bin
 ```
-**Troubleshooting**
-By simply installing brave, the application will look pixeled.
-To solve it, follow the next steps:
-1. Open the following file with sudo:
-    ```
-    /usr/share/applications/brave-browser.desktop
-    ```
-2. Replace the current "Exec=brave %U" with the following:
-    ```
-    Exec=brave --enable-features=UseOzonePlatform --ozone-platform=wayland %U
-    ```
 
 ## stow
 **Installation**
