@@ -1,3 +1,4 @@
+top-bar-organizer@julian.gse.jsts.xyz
 dash-to-dock@micxgx.gmail.com
 blur-my-shell@aunetx
 clipboard-indicator@tudmotu.com
