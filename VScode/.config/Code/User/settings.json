@@ -1,0 +1,13 @@
+{
+  "telemetry.telemetryLevel": "off",
+  "extensions.telemetry.enabled": false,
+  "workbench.enableExperiments": false,
+  "window.zoomLevel": 1.4,
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
+  },
+  "vscode-neovim.neovimClean": true,
+  "workbench.colorTheme": "Tokyo Night",
+  "breadcrumbs.enabled": false,
+  "python.analysis.inlayHints.callArgumentNames": "all"
+}
