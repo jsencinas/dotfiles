@@ -274,6 +274,34 @@ b. Keyboard shortcuts configs
 20. Show the notification list ------------>    Disabled
 21. Toggle clipboard menu ----------------->    Super+v
 
+**Backup & Restore**
+Configuration is backed up automatically to this repo using `updateGnomeConfig.sh`.
+
+*What gets saved*
+- GNOME settings (dconf)
+- Extension settings
+- Extension names list
+
+*Keeping the backup up to date*
+Run the update script whenever you change GNOME settings or install new extensions:
+    ./updateGnomeConfig.sh
+
+*Restoring on a new machine*
+1. Restore keyboard shortcuts
+```
+dconf load /org/gnome/desktop/wm/keybindings/ < ~/dotfiles/gnome/keybindings.ini
+```
+2. Restore extension settings
+```
+dconf load /org/gnome/shell/extensions/ < ~/dotfiles/gnome/extensions-settings.ini
+```
+3. Reinstall extensions using the saved list (manually)
+```
+cat ~/dotfiles/gnome/extensions.txt
+# Then visit https://extensions.gnome.org to reinstall each one.
+```
+
+
 # Fonts
 ## Apple fonts
 **Installation**
