@@ -11,5 +11,8 @@
   "breadcrumbs.enabled": false,
   "python.analysis.inlayHints.callArgumentNames": "all",
   "vim.useSystemClipboard": true,
-  "terminal.integrated.enablePersistentSessions": false
+
+  "terminal.integrated.enablePersistentSessions": false,
+  "terminal.integrated.inheritEnv": false,
+  "python.terminal.activateEnvironment": false
 }
