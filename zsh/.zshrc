@@ -81,7 +81,5 @@ if [ -z "$TMUX" ]; then
   tmux new -A -s temp
 fi
 
-alias "code"="codium ."
-
 # For Ubuntu, uncomment the following line:
 # export PATH=$HOME/.local/opt/nvim/bin:$PATH
