@@ -17,6 +17,7 @@ IMAGE
     - [Oh My Zsh](#Oh-My-Zsh)
     - [Tmux](#Tmux)PENDING
     - [Yay](#Yay)
+- [Power management tools](#Power-management-tools)
 - [Desktop utilities](#Desktop-utilities)
     - [Gnome](#Gnome)
 - [Fonts](#Fonts)
@@ -227,6 +228,20 @@ git clone <yay_repo>
 cd yay
 makepkg -si
 ```
+
+
+# Power management tools
+## TLP
+Open-source command-line utility for Linux that automatically optimizes laptop battery life.
+**Installation**
+    ```
+    sudo pacman -S tlp
+    ```
+**Start using it**
+    ```
+    sudo systemctl enable --now tlp
+    ```
+
 
 # Desktop utilities
 ## Gnome
