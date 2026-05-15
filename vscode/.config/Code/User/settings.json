@@ -14,7 +14,7 @@
   "gitlens.telemetry.enabled": false,
   "github.copilot.advanced": {
     "telemetry.enabled": false
-  }
+  },
   
   "window.zoomLevel": 1.4,
   "extensions.experimental.affinity": {
