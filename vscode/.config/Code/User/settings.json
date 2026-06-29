@@ -28,5 +28,7 @@
 
   "terminal.integrated.enablePersistentSessions": false,
   "terminal.integrated.inheritEnv": false,
-  "python.terminal.activateEnvironment": false
+  "python.terminal.activateEnvironment": false,
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false
 }

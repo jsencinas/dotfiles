@@ -21,6 +21,7 @@ IMAGE
 - [Desktop utilities](#Desktop-utilities)
     - [Gnome](#Gnome)
 - [Fonts](#Fonts)
+- [Adittional configs](#Adittional-configs)
 
 # Overview
 A compilation of all my gigachad config files for the software I use in my linux enviorment.
@@ -336,3 +337,16 @@ personal preference).
 sudo pacman -S ttf-liberation ttf-dejavu
 ```
 
+
+# Additional configs
+## Caps lock to Ctrl
+This changes your Caps lock key to act as an extra Ctrl key. This is the method used for gnome.
+Apply the change:
+```
+gsettings set org.gnome.desktop.input-sources xkb-options "['ctrl:nocaps']"
+```
+
+To go back to the default:
+```
+gsettings reset org.gnome.desktop.input-sources xkb-options
+```
