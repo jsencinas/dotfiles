@@ -4,7 +4,7 @@
   "workbench.enableExperiments": false,
   "workbench.settings.enableNaturalLanguageSearch": false,
   "extensions.autoCheckUpdates": false,
-  "extensions.autoUpdate": false,
+  "extensions.autoUpdate": "off",
   "update.mode": "none",
   "update.showReleaseNotes": false,
   "search.searchOnType": false,
@@ -30,5 +30,9 @@
   "terminal.integrated.inheritEnv": false,
   "python.terminal.activateEnvironment": false,
   "explorer.confirmDelete": false,
-  "explorer.confirmDragAndDrop": false
+  "explorer.confirmDragAndDrop": false,
+  "debug.onTaskErrors": "debugAnyway",
+  "workbench.secondarySideBar.defaultVisibility": "hidden",
+  "git.openRepositoryInParentFolders": "always",
+  "debug.breakpointsView.presentation": "tree"
 }

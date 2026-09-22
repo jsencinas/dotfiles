@@ -68,18 +68,13 @@ if [[ "$TERM" == "xterm-ghostty" ]]; then
   export TERM=xterm-256color
 fi
 
-# For flutter
-export PATH="$HOME/develop/flutter/bin:$PATH"
-
-# For android
-# export PATH="$HOME/Android/Sdk/cmdline-tools/latest/bin/:$PATH"
-export ANDROID_HOME="$HOME/Android/Sdk"
-export ANDROID_SDK_ROOT="$ANDROID_HOME"
-export PATH="$ANDROID_HOME/emulator:$ANDROID_HOME/platform-tools:$ANDROID_HOME/cmdline-tools/latest/bin:$PATH"
-
 if [ -z "$TMUX" ]; then
   tmux new -A -s temp
 fi
 
 # For Ubuntu, uncomment the following line:
 # export PATH=$HOME/.local/opt/nvim/bin:$PATH
+
+
+# Added by Antigravity CLI installer
+export PATH="/home/jorge/.local/bin:$PATH"
