@@ -34,5 +34,14 @@
   "debug.onTaskErrors": "debugAnyway",
   "workbench.secondarySideBar.defaultVisibility": "hidden",
   "git.openRepositoryInParentFolders": "always",
-  "debug.breakpointsView.presentation": "tree"
+  "debug.breakpointsView.presentation": "tree",
+  "github.copilot.enable": {
+    "*": false,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false,
+    "cpp": false
+  },
+  "C_Cpp.codeAnalysis.clangTidy.enabled": true,
+  "C_Cpp.codeAnalysis.runAutomatically": true
 }
