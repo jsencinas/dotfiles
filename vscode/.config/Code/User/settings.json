@@ -42,6 +42,5 @@
     "scminput": false,
     "cpp": false
   },
-  "C_Cpp.codeAnalysis.clangTidy.enabled": true,
-  "C_Cpp.codeAnalysis.runAutomatically": true
+  "errorLens.delay": 500
 }
