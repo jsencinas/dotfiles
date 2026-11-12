@@ -1,103 +1,83 @@
--- imports
-local builtin = require('telescope.builtin')
-local harpoon = require("harpoon")
-local blink = require("blink.cmp")
+-- The leader key is set in config/lazy.lua (it must exist before plugins load).
+-- Plugins are required inside the callbacks so they only load when first used.
+local map = vim.keymap.set
 
-local opts = { noremap = true, silent = true }
+-- EDITING
+map("v", "J", ":m '>+1<cr>gv=gv", { silent = true, desc = "Move selection down" })
+map("v", "K", ":m '<-2<cr>gv=gv", { silent = true, desc = "Move selection up" })
+map("v", "<", "<gv", { desc = "Dedent and keep selection" })
+map("v", ">", ">gv", { desc = "Indent and keep selection" })
+map("x", "<leader>p", '"_dP', { desc = "Paste without overwriting the register" })
+map({ "n", "v" }, "<leader>y", '"+y', { desc = "Yank to system clipboard" })
 
-vim.g.mapleader = " "
+-- Keep the cursor centered while jumping around
+map("n", "J", "mzJ'z")
+map("n", "n", "nzzzv")
+map("n", "N", "Nzzzv")
+map("n", "<C-d>", "<C-d>zz")
+map("n", "<C-u>", "<C-u>zz")
 
--- Vim builtin commands
-vim.keymap.set("n", "<leader>lv", vim.cmd.Ex, { desc = 'Open the file explorer within vim' })
+map("i", "<C-c>", "<Esc>")
+map("n", "<C-c>", "<cmd>nohlsearch<cr>")
+map("n", "<Esc>", "<cmd>nohlsearch<cr>")
 
-vim.keymap.set("v", "J", ":m '>+1<cr>gv=gv")
-vim.keymap.set("v", "K", ":m '<-2<cr>gv=gv")
+-- TMUX NAVIGATION: <C-h/j/k/l> (in lua/plugins/tmux_navigation.lua)
 
-vim.keymap.set("n", "J", "mzJ'z")
-vim.keymap.set("n", "n", "nzzzv")
-vim.keymap.set("n", "N", "Nzzzv")
+-- FILE EXPLORER (sidebar)
+map("n", "<leader>e", "<cmd>Neotree toggle<cr>", { desc = "Toggle file explorer" })
+map("n", "<leader>lv", "<cmd>Neotree reveal<cr>", { desc = "Reveal current file in explorer" })
 
-vim.keymap.set("v", "<leader>y", "\"+y")
-vim.keymap.set("n", "<leader>y", "\"+y")
+-- BUFFERS (tabs at the top)
+map("n", "H", "<cmd>BufferLineCyclePrev<cr>", { desc = "Previous buffer" })
+map("n", "L", "<cmd>BufferLineCycleNext<cr>", { desc = "Next buffer" })
+map("n", "<leader>bd", "<cmd>bdelete<cr>", { desc = "Close buffer" })
+map("n", "<leader>bo", "<cmd>BufferLineCloseOthers<cr>", { desc = "Close other buffers" })
 
--- vim.keymap.set("n", "Q", "<nop>")
-vim.keymap.set("i", "<C-c>", "<Esc>")
-vim.keymap.set("n", "<C-c>", "<cmd>nohlsearch<CR>")
-
--- TMUX NAVIGATION (In ~/.config/nvim/lua/plugins/tmux_navigation.lua file)
-
--- TELESCOPE
-vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = 'Telescope find files' })
-vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = 'Telescope live grep' })
--- To use live grep, install 'ripgrep' in your computer
-
---[[
-vim.keymap.set("n", "<leader>ps", function()
-    builtin.grep_string({ search = vim.fn.input("Grep > ") })
+-- TELESCOPE (live grep needs 'ripgrep' installed)
+local function telescope(picker)
+  return function()
+    require("telescope.builtin")[picker]()
+  end
 end
-)
---]]
-vim.keymap.set("n", "<C-p>", builtin.git_files, { desc = 'Telescope find files respecting .gitignore' })
+map("n", "<leader>ff", telescope("find_files"), { desc = "Find files" })
+map("n", "<leader>fg", telescope("live_grep"), { desc = "Live grep" })
+map("n", "<leader>fb", telescope("buffers"), { desc = "Find buffers" })
+map("n", "<leader>fr", telescope("oldfiles"), { desc = "Recent files" })
+map("n", "<leader>fh", telescope("help_tags"), { desc = "Help pages" })
+map("n", "<leader>fk", telescope("keymaps"), { desc = "Keymaps" })
+map("n", "<leader>fw", telescope("grep_string"), { desc = "Grep word under cursor" })
+map("n", "<C-p>", telescope("git_files"), { desc = "Find git-tracked files" })
 
 -- HARPOON
-vim.keymap.set("n", "<leader>a", function() harpoon:list():add() end)
-vim.keymap.set("n", "<C-e>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
--- vim.keymap.set("n", "<C-c>", function() harpoon.ui:close_menu() end)
-
-vim.keymap.set("n", "<C-h>", function() harpoon:list():select(1) end)
-vim.keymap.set("n", "<C-t>", function() harpoon:list():select(2) end)
-vim.keymap.set("n", "<C-n>", function() harpoon:list():select(3) end)
-vim.keymap.set("n", "<C-s>", function() harpoon:list():select(4) end)
-
--- Toggle previous & next buffers stored within Harpoon list
-vim.keymap.set("n", "<C-S-P>", function() harpoon:list():prev() end)
-vim.keymap.set("n", "<C-S-N>", function() harpoon:list():next() end)
+local function harpoon_list()
+  return require("harpoon"):list()
+end
+map("n", "<leader>a", function() harpoon_list():add() end, { desc = "Harpoon: add file" })
+map("n", "<C-e>", function()
+  local harpoon = require("harpoon")
+  harpoon.ui:toggle_quick_menu(harpoon:list())
+end, { desc = "Harpoon: menu" })
+for slot = 1, 4 do
+  map("n", "<leader>" .. slot, function() harpoon_list():select(slot) end, { desc = "Harpoon: file " .. slot })
+end
+map("n", "<leader>hp", function() harpoon_list():prev() end, { desc = "Harpoon: previous file" })
+map("n", "<leader>hn", function() harpoon_list():next() end, { desc = "Harpoon: next file" })
 
 -- UNDOTREE
-vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
+map("n", "<leader>u", vim.cmd.UndotreeToggle, { desc = "Toggle undo tree" })
 
--- FUGITIVE
-vim.keymap.set("n", "<leader>gs", vim.cmd.Git)
-
--- BLINK AUTOCOMPLETION
-vim.keymap.set("i", "<C-k>", blink.insert_prev)
-vim.keymap.set("i", "<C-j>", blink.insert_next)
-vim.keymap.set("i", "<C- >", blink.accept)
+-- GIT (hunk maps are in lua/plugins/gitsigns.lua)
+map("n", "<leader>gs", vim.cmd.Git, { desc = "Git status (fugitive)" })
 
 -- TROUBLE
-vim.keymap.set("n", "<leader>xx", "<cmd>Trouble diagnostics toggle<cr>", vim.tbl_extend("force", opts, { desc = "Diagnostics (Trouble)" }))
-vim.keymap.set("n", "<leader>xq", "<cmd>Trouble qflist toggle<cr>", vim.tbl_extend("force", opts, { desc = "Quickfix (Trouble)" }))
-vim.keymap.set("n", "<leader>xr", "<cmd>Trouble lsp_references toggle<cr>", vim.tbl_extend("force", opts, { desc = "LSP References (Trouble)" }))
-vim.keymap.set("n", "<leader>cs", "<cmd>Trouble symbols toggle focus=false<cr>", vim.tbl_extend("force", opts, {desc = "Symbols (Trouble)"}))
+map("n", "<leader>xx", "<cmd>Trouble diagnostics toggle<cr>", { desc = "Diagnostics (Trouble)" })
+map("n", "<leader>xq", "<cmd>Trouble qflist toggle<cr>", { desc = "Quickfix (Trouble)" })
+map("n", "<leader>xr", "<cmd>Trouble lsp_references toggle<cr>", { desc = "LSP references (Trouble)" })
+map("n", "<leader>cs", "<cmd>Trouble symbols toggle focus=false<cr>", { desc = "Symbols (Trouble)" })
 
--- LSP
-vim.api.nvim_create_autocmd('LspAttach', {
-  group = vim.api.nvim_create_augroup('user-lsp-keymaps', { clear = true }),
-  callback = function(event)
-      local map = function(keys, func, desc, mode)
-      mode = mode or 'n'
-      vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
-    end
-    -- Keybindings for your keymaps.lua
-    map('gd', vim.lsp.buf.definition, '[G]oto [D]efinition')
-    map('K', vim.lsp.buf.hover, 'Hover Documentation')
-    map('<leader>vws', vim.lsp.buf.workspace_symbol, '[V]iew [W]orkspace [S]ymbols')
-    map('<leader>vd', vim.diagnostic.open_float, '[V]iew [D]iagnostic')
-    map('[d', vim.diagnostic.goto_next, 'Next [D]iagnostic')
-    map(']d', vim.diagnostic.goto_prev, 'Previous [D]iagnostic')
+-- DIAGNOSTICS ([d and ]d jump to the previous / next one, built into Neovim)
+map("n", "<leader>cd", vim.diagnostic.open_float, { desc = "Line diagnostics" })
 
-    map('<leader>vca', vim.lsp.buf.code_action, '[V]iew [C]ode [A]ction')
-    map('<leader>vrr', vim.lsp.buf.references, '[V]iew [R]efe[R]ences')
-    map('<leader>vrn', vim.lsp.buf.rename, '[V]iew [R]e[N]ame', {"n", "v"})
-    map('<C-h>', vim.lsp.buf.signature_help, 'Signature [H]elp', "i")
-  end,
-})
--- Not a keymap, gets rid of the lsp icons
---[[
-vim.diagnostic.config({
-    virtual_text = true, -- Keep virtual text if you like it
-    signs = false,       -- This is the key line to disable signs in the sign column
-})
---]]
--- Avoids the annoying lsp code shift
-vim.opt.signcolumn = 'yes'
+-- LSP maps are buffer-local, see lua/plugins/lsp.lua
+-- Completion maps are in lua/plugins/blink_cmp.lua
+-- Formatting (<leader>cf) is in lua/plugins/conform.lua

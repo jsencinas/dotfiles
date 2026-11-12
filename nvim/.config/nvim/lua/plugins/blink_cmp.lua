@@ -5,7 +5,16 @@ return {
   ---@module 'blink.cmp'
   ---@type blink.cmp.Config
   opts = {
-    keymap = { preset = 'none' },
+    keymap = {
+      preset = 'none',
+      ['<C-j>'] = { 'insert_next', 'fallback' },
+      ['<C-k>'] = { 'insert_prev', 'fallback' },
+      ['<C-space>'] = { 'accept', 'show', 'fallback' },
+      ['<C-e>'] = { 'hide', 'fallback' },
+      ['<C-d>'] = { 'show_documentation', 'hide_documentation', 'fallback' },
+      ['<Tab>'] = { 'snippet_forward', 'fallback' },
+      ['<S-Tab>'] = { 'snippet_backward', 'fallback' },
+    },
     appearance = {
       nerd_font_variant = 'mono'
     },

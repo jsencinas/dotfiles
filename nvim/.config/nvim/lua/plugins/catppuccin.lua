@@ -1,8 +1,8 @@
 return {
   'catppuccin/nvim',
-  config = function()
-    require("catppuccin").setup({
-      transparent_background = false
-    })
-  end
+  name = 'catppuccin',
+  lazy = true, -- loaded on demand by :colorscheme
+  opts = {
+    transparent_background = false,
+  },
 }

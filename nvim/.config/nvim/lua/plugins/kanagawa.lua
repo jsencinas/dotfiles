@@ -1,8 +1,7 @@
 return {
   'rebelot/kanagawa.nvim',
-  config = function()
-    require("kanagawa").setup({
-      transparent = false,
-    })
-end
+  lazy = true, -- loaded on demand by :colorscheme
+  opts = {
+    transparent = false,
+  },
 }
