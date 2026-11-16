@@ -104,7 +104,6 @@ Unless noted, maps are for normal mode.
 | `<Esc>` or `<C-c>` | normal | Clear search highlight |
 | `<C-c>` | insert | Leave insert mode |
 | `<leader>u` | normal | Toggle the undo tree |
-| `<leader>tm` | normal | Toggle markdown rendering |
 
 ## Where they are defined
 
@@ -117,4 +116,3 @@ Unless noted, maps are for normal mode.
 | Formatting | `lua/plugins/conform.lua` |
 | Tmux navigation | `lua/plugins/tmux_navigation.lua` |
 | `<leader>xX` | `lua/plugins/trouble.lua` |
-| Markdown rendering | `lua/plugins/render_markdown.lua` |
